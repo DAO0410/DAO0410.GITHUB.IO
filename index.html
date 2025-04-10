@@ -1,246 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Bootstrap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!DOCTYPE HTML>
+<!--
+    AI反欺诈平台 - 智能风控解决方案
+    基于Paradigm Shift模板修改
+-->
+<html>
 
-    <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="assets/css/docs.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<head>
+    <title>AI反欺诈平台 | 智能风控与隐私保护</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="基于AI的信用卡反欺诈系统，95%精准识别率，毫秒级响应，符合GDPR等全球隐私法规" />
+    <meta name="keywords" content="AI反欺诈,智能风控,联邦学习,信用卡安全" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* 自定义风控主题色 */
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+        }
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-    <![endif]-->
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-    <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+        section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #eee;
+        }
 
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-146052-10']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </head>
+        header h2 {
+            color: var(--primary);
+        }
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+        .risk-badge {
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
 
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="./index.html">Home</a>
-              </li>
-              <li class="">
-                <a href="./getting-started.html">Get started</a>
-              </li>
-              <li class="">
-                <a href="./scaffolding.html">Scaffolding</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">Base CSS</a>
-              </li>
-              <li class="">
-                <a href="./components.html">Components</a>
-              </li>
-              <li class="">
-                <a href="./javascript.html">JavaScript</a>
-              </li>
-              <li class="">
-                <a href="./customize.html">Customize</a>
-              </li>
+        /* 新增样式 */
+        .section-bg-tech {
+            background-color: #e6f2ff;
+        }
+
+        .section-bg-privacy {
+            background-color: #f5e6ff;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1a63ff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item {
+            background: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- 主视觉区 -->
+    <section class="intro">
+        <header>
+            <h1>AI反欺诈智能平台</h1>
+            <p>基于深度学习的实时风控系统 · 欺诈识别准确率<span class="risk-badge">≥95%</span></p>
+            <ul class="actions">
+                <li><a href="#tech" class="arrow scrolly"><span class="label">核心技术</span></a></li>
             </ul>
-          </div>
+        </header>
+    </section>
+
+    <!-- 行业解决方案 -->
+    <section>
+        <header>
+            <h2>行业定制化解决方案</h2>
+        </header>
+        <div class="content">
+            <p><strong>覆盖金融、电商、支付等高风险场景</strong>，已为20+金融机构提供定制化风控服务，帮助众多企业有效降低欺诈风险。</p>
+
+            <!-- 行业案例 -->
+            <div class="features">
+                <section class="gallery-item">
+                    <h3>银行案例</h3>
+                    <p>某商业银行：月均拦截欺诈交易¥2300万，风险损失降低40%</p>
+                </section>
+                <section class="gallery-item">
+                    <h3>电商案例</h3>
+                    <p>电商平台：虚假订单减少62%，用户信任度提升30%</p>
+                </section>
+                <section class="gallery-item">
+                    <h3>支付案例</h3>
+                    <p>跨境支付：洗钱识别准确率提升40%，交易安全性显著增强</p>
+                </section>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-<div class="jumbotron masthead">
-  <div class="container">
-    <h1>Bootstrap</h1>
-    <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
-    <p>
-      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.3.2']);">Download Bootstrap</a>
-    </p>
-    <ul class="masthead-links">
-      <li>
-        <a href="http://github.com/twitter/bootstrap" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub project</a>
-      </li>
-      <li>
-        <a href="./getting-started.html#examples" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Examples']);">Examples</a>
-      </li>
-      <li>
-        <a href="./extend.html" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Extend']);">Extend</a>
-      </li>
-      <li>
-        Version 2.3.2
-      </li>
-    </ul>
-  </div>
-</div>
+    <!-- CTA -->
+    <section>
+        <header>
+            <h2>立即体验智能风控</h2>
+        </header>
+        <div class="content">
+            <p><strong>免费获取定制化解决方案评估</strong></p>
+            <ul class="actions">
+                <li><a href="#contact" class="button primary large">申请演示</a></li>
+                <li><a href="whitepaper.pdf" class="button large">下载技术白皮书</a></li>
+            </ul>
+        </div>
+    </section>
 
-<div class="bs-docs-social">
-  <div class="container">
-    <ul class="bs-docs-social-buttons">
-      <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-      </li>
-      <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
-      </li>
-      <li class="follow-btn">
-        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
-      </li>
-      <li class="tweet-btn">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twbs.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
-      </li>
-    </ul>
-  </div>
-</div>
+    <!-- 核心技术 -->
+    <section id="tech" class="section-bg-tech">
+        <header>
+            <h2>三级递进式风控引擎</h2>
+        </header>
+        <div class="content">
+            <p><strong>独创的混合检测架构</strong>结合规则引擎与机器学习，实现从实时拦截到深度分析的全面防护。</p>
 
-<div class="container">
+            <div class="features">
+                <!-- 技术模块1 -->
+                <section>
+                    <span class="icon solid fa-bolt"></span>
+                    <h3>实时规则引擎</h3>
+                    <ul>
+                        <li>Kafka/Samza流处理架构，高效处理海量交易数据，确保系统实时性</li>
+                        <li>2000+可配置风控规则，涵盖交易金额、地点、时间等多维度，精准识别风险</li>
+                        <li>交易响应时间<1秒，保障用户交易体验</li>
+                    </ul>
+                </section>
 
-  <div class="marketing">
+                <!-- 技术模块2 -->
+                <section>
+                    <span class="icon solid fa-brain"></span>
+                    <h3>智能模型检测</h3>
+                    <ul>
+                        <li>Spark/MapReduce分布式训练，利用大规模计算资源快速训练模型</li>
+                        <li>XGBoost+神经网络多模型投票，综合多个模型优势，提高识别准确率</li>
+                        <li>异地交易识别准确率98.7%，有效防范盗刷风险</li>
+                    </ul>
+                </section>
 
-    <h1>Introducing Bootstrap.</h1>
-    <p class="marketing-byline">Need reasons to love Bootstrap? Look no further.</p>
+                <!-- 技术模块3 -->
+                <section>
+                    <span class="icon solid fa-search-plus"></span>
+                    <h3>异常行为分析</h3>
+                    <ul>
+                        <li>K-Means聚类算法，自动发现用户行为模式</li>
+                        <li>用户行为纵向对比，及时发现用户消费习惯的异常变化</li>
+                        <li>通过聚类分析，成功发现多起新型欺诈模式，如团伙式小额高频盗刷</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
 
-    <div class="row-fluid">
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-twitter-github.png">
-        <h2>By nerds, for nerds.</h2>
-        <p>Built at Twitter by <a href="http://twitter.com/mdo">@mdo</a> and <a href="http://twitter.com/fat">@fat</a>, Bootstrap utilizes <a href="http://lesscss.org">LESS CSS</a>, is compiled via <a href="http://nodejs.org">Node</a>, and is managed through <a href="http://github.com">GitHub</a> to help nerds do awesome stuff on the web.</p>
-      </div>
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-responsive-illustrations.png">
-        <h2>Made for everyone.</h2>
-        <p>Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via <a href="./scaffolding.html#responsive">responsive CSS</a> as well.</p>
-      </div>
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-bootstrap-features.png">
-        <h2>Packed with features.</h2>
-        <p>A 12-column responsive <a href="./scaffolding.html#gridSystem">grid</a>, dozens of components, <a href="./javascript.html">JavaScript plugins</a>, typography, form controls, and even a <a href="./customize.html">web-based Customizer</a> to make Bootstrap your own.</p>
-      </div>
-    </div>
+    <!-- 隐私保护 -->
+    <section class="section-bg-privacy">
+        <header>
+            <h2>隐私增强技术</h2>
+            <p>全球首个通过GDPR和《个人信息保护法》双认证的AI风控系统</p>
+        </header>
+        <div class="content">
+            <ul class="feature-icons">
+                <li class="icon solid fa-lock">同态加密，确保数据在加密状态下进行计算和分析</li>
+                <li class="icon solid fa-shield-alt">联邦学习，实现跨机构数据协同，不传输原始数据</li>
+                <li class="icon solid fa-user-secret">动态脱敏，根据数据使用场景自动调整脱敏策略</li>
+                <li class="icon solid fa-project-diagram">多方安全计算，保障数据在多参与方之间的安全共享和计算</li>
+            </ul>
+            <blockquote>"数据可用不可见"原则：训练过程不传输原始数据，仅交换加密参数，充分保护用户隐私</blockquote>
+        </div>
+    </section>
 
-    <hr class="soften">
+    <!-- 联系我们 -->
+    <section id="contact">
+        <header>
+            <h2>联系我们</h2>
+        </header>
+        <div class="content">
+            <form id="contact-form">
+                <div class="fields">
+                    <div class="field half">
+                        <input type="text" name="name" id="name" placeholder="机构名称" required />
+                    </div>
+                    <div class="field half">
+                        <input type="email" name="email" id="email" placeholder="联系邮箱" required />
+                    </div>
+                    <div class="field">
+                        <select name="industry" required>
+                            <option value="">选择所属行业</option>
+                            <option value="banking">银行业</option>
+                            <option value="ecommerce">电子商务</option>
+                            <option value="payment">支付机构</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <textarea name="message" id="message" placeholder="请描述您的风控需求..." rows="5" required></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><button type="submit" class="button primary">提交需求</button></li>
+                </ul>
+            </form>
+        </div>
+        <footer>
+            <ul class="items">
+                <li>
+                    <h3>技术合作</h3>
+                    <a href="mailto:tech@antifraud.ai">tech@antifraud.ai</a>
+                </li>
+                <li>
+                    <h3>商务咨询</h3>
+                    <a href="tel:+8601012345678">+86 010-12345678</a>
+                </li>
+                <li>
+                    <h3>研究院</h3>
+                    <span>江苏师范大学金融科技实验室</span>
+                </li>
+                <li>
+                    <h3>关注我们</h3>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-weixin"><span class="label">微信</span></a></li>
+                        <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </footer>
+    </section>
 
-    <h1>Built with Bootstrap.</h1>
-    <p class="marketing-byline">For even more sites built with Bootstrap, <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">visit the unofficial Tumblr</a> or <a href="./getting-started.html#examples">browse the examples</a>.</p>
-    <div class="row-fluid">
-      <ul class="thumbnails example-sites">
-        <li class="span3">
-          <a class="thumbnail" href="http://soundready.fm/" target="_blank">
-            <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://kippt.com/" target="_blank">
-            <img src="assets/img/example-sites/kippt.png" alt="Kippt">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://www.gathercontent.com/" target="_blank">
-            <img src="assets/img/example-sites/gathercontent.png" alt="Gather Content">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
-            <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
-          </a>
-        </li>
-      </ul>
-     </div>
+    <!-- 版权声明 -->
+    <div class="copyright">&copy; AI反欺诈平台. 基于<a href="https://html5up.net">HTML5 UP</a>模板修改</div>
 
-  </div>
-
-</div>
-
-
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <ul class="footer-links">
-          <li><a href="http://blog.getbootstrap.com">Blog</a></li>
-          <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a></li>
-          <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twbs/bootstrap/releases">Changelog</a></li>
-        </ul>
-      </div>
-    </footer>
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-    <script src="assets/js/bootstrap-affix.js"></script>
-
-    <script src="assets/js/holder/holder.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
-
-    <script src="assets/js/application.js"></script>
-
-
-    <!-- Analytics
-    ================================================== -->
+    <!-- 脚本 -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- 新增动画脚本 -->
     <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $('.fade-in').each(function () {
+                    var bottomOfObject = $(this).offset().top + $(this).outerHeight();
+                    var bottomOfWindow = $(window).scrollTop() + $(window).height();
+                    if (bottomOfWindow > bottomOfObject) {
+                        $(this).addClass('visible');
+                    }
+                });
+            });
+        });
     </script>
+    <!-- 风控专用脚本 -->
+    <script>
+        // 表单提交处理
+        $('#contact-form').submit(function (e) {
+            e.preventDefault();
+            alert('需求已提交！我们的风控专家将在24小时内联系您');
+            this.reset();
+        });
+    </script>
+</body>
 
-  </body>
-</html>
+</html>    
