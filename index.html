@@ -28,13 +28,9 @@
         /* 新增样式 */
         .section-bg-tech {
             background-color: #e6f2ff;
-            background-image: url('tech-bg-pattern.png');
-            background-repeat: repeat;
         }
         .section-bg-privacy {
             background-color: #f5e6ff;
-            background-image: url('privacy-bg-pattern.png');
-            background-repeat: repeat;
         }
         .button:hover {
             background-color: #1a63ff;
@@ -48,6 +44,21 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        /* 替代图片的纯色区块 */
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+        }
+        .gallery-item {
+            background: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -63,7 +74,7 @@
             </ul>
         </header>
         <div class="content">
-            <span class="image fill" data-position="center"><img src="new-fraud-detection.jpg" alt="AI风控系统示意图" /></span>
+            <div class="image-placeholder">AI风控系统示意图</div>
         </div>
     </section>
 
@@ -110,8 +121,8 @@
                 </section>
             </div>
             
-            <!-- 技术架构图 -->
-            <span class="image main"><img src="new-tech-architecture.png" alt="三级风控架构图" /></span>
+            <!-- 技术架构图占位 -->
+            <div class="image-placeholder">三级风控架构图</div>
         </div>
     </section>
 
@@ -124,19 +135,19 @@
             <p><strong>覆盖金融、电商、支付等高风险场景</strong>，已为20+金融机构提供定制化风控服务，帮助众多企业有效降低欺诈风险。</p>
             
             <!-- 行业案例 -->
-            <div class="gallery">
-                <a href="images/cases/new-bank.jpg" class="landscape">
-                    <img src="images/cases/new-bank-thumb.jpg" alt="银行案例" />
-                    <div class="caption">某商业银行：月均拦截欺诈交易¥2300万，风险损失降低40%</div>
-                </a>
-                <a href="images/cases/new-ecommerce.jpg">
-                    <img src="images/cases/new-ecommerce-thumb.jpg" alt="电商案例" />
-                    <div class="caption">电商平台：虚假订单减少62%，用户信任度提升30%</div>
-                </a>
-                <a href="images/cases/new-payment.jpg">
-                    <img src="images/cases/new-payment-thumb.jpg" alt="支付案例" />
-                    <div class="caption">跨境支付：洗钱识别准确率提升40%，交易安全性显著增强</div>
-                </a>
+            <div class="features">
+                <section class="gallery-item">
+                    <h3>银行案例</h3>
+                    <p>某商业银行：月均拦截欺诈交易¥2300万，风险损失降低40%</p>
+                </section>
+                <section class="gallery-item">
+                    <h3>电商案例</h3>
+                    <p>电商平台：虚假订单减少62%，用户信任度提升30%</p>
+                </section>
+                <section class="gallery-item">
+                    <h3>支付案例</h3>
+                    <p>跨境支付：洗钱识别准确率提升40%，交易安全性显著增强</p>
+                </section>
             </div>
         </div>
     </section>
@@ -261,4 +272,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
